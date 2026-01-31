@@ -1,0 +1,256 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ESTILO GERAL */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  color: #111;
+}
+
+/* ========================= */
+/* MENU TOPO COM LOGO */
+/* ========================= */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 12px 0;
+}
+
+.menu-container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+/* LOGO */
+/* LOGO COMO BOTÃO - FINAL */
+.menu-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 64px;
+  /* acompanha a faixa preta */
+  padding: 0 16px;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(7px);
+
+  cursor: pointer;
+  overflow: hidden;
+  /* MUITO IMPORTANTE */
+
+  transition: background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* ZOOM NO CONTEÚDO DA IMAGEM */
+.menu-logo img {
+  height: 100%;
+  width: auto;
+
+  object-fit: contain;
+  display: block;
+
+  /* ESCALA DEFINITIVA */
+  transform: scale(2.5);
+  transform-origin: center;
+
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.55));
+}
+
+/* HOVER */
+.menu-logo:hover {
+  background: rgba(255, 255, 255, 0.10);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
+.menu-logo:active {
+  transform: scale(0.97);
+}
+
+/* LINKS */
+.menu nav {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.menu a {
+  color: rgb(160, 160, 160);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.menu a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* BOTÃO CONTATO */
+.contato-menu {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+/* ========================= */
+/* HERO / CAPA (CORRIGIDA) */
+/* ========================= */
+.hero {
+  position: relative;
+
+  background-image: url("imagens/hero/hero.jpg");
+  background-repeat: no-repeat;
+
+  /* NÃO CORTA AS PERSONAGENS */
+  background-size: cover;
+  background-position: center 20%;
+
+  /* Ajusta espaço por causa do menu fixo */
+  margin-top: 80px;
+  min-height: calc(90vh - 80px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: #fff;
+
+  overflow: hidden;
+}
+
+/* OVERLAY PROFISSIONAL */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    radial-gradient(circle at 50% 40%, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7)),
+    linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.7));
+}
+
+/* CONTEÚDO CENTRAL */
+.hero-conteudo {
+  position: relative;
+  z-index: 2;
+
+  max-width: 900px;
+  padding: 20px;
+}
+
+/* TÍTULO */
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  text-shadow: 0 6px 22px rgba(0, 0, 0, 0.6);
+}
+
+/* TEXTO */
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* BOTÕES */
+.hero-botoes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* ========================= */
+/* BOTÃO PREMIUM */
+/* ========================= */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+
+  padding: 12px 28px;
+  text-decoration: none;
+  border-radius: 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.botao:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 12px 28px rgba(0, 0, 0, 0.45),
+    0 0 22px rgba(255, 255, 255, 0.18);
+}
+
+.botao:active {
+  transform: scale(0.97);
+}
+
+/* ========================= */
+/* PORTFÓLIO */
+/* ========================= */
+#portfolio {
+  padding: 40px;
+  text-align: center;
+}
+
+#portfolio h2 {
+  margin-bottom: 10px;
+}
+
+/* GALERIA */
+.galeria {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.galeria img {
+  width: 250px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
